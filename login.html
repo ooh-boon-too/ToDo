@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tOdO</title>
+
     <style>
         body {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -14,31 +14,22 @@
         #ramka {
             padding: 15px;
             margin: auto;
-            background-color: lightgrey;
+            background-color: lightgray;
             width: max-content;
             height: max-content;
         }
     </style>
 </head>
-
 <body>
     <section id="ramka">
-        <h1>ToDo</h1>
-        <button id="dodaj" onclick="dodajElement()">Dodaj element</button>
-        <p id="lista"></p>
+        <h1 align="center">tOdO</h1>
+        <form action="" id="form1">
+            <label for="username">Username</label><br>
+            <input id="username" type="text" required autofocus><br>
+            <label for="password">Password</label><br>
+            <input id="passowrod" type="password" required><br><br>
+            <input type="submit" value="Sign in">
+        </form>
     </section>
-    <script>
-        function dodajElement() {
-            var zadanie = prompt("Nowe zadanie:");
-
-            document.getElementById("lista").innerHTML = zadanie +
-                " <button id=\"usun\" onclick=\"usunElement()\">Zakończone</button>";
-        }
-
-        function usunElement() {
-            document.getElementById("lista").innerHTML = "";
-        }
-    </script>
 </body>
-
 </html>
