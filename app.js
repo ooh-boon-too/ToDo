@@ -45,7 +45,7 @@ function deleteCheck(e) {
     if (item.classList[0] === "trash-btn") {
         const todo = item.parentElement;
         //Animacja
-        todo.classList.add("fall");
+        todo.classList.add("swipe");
         removeLocalTodos(todo);
         todo.addEventListener("transitionend", function () {
             todo.remove();
@@ -136,6 +136,7 @@ function removeLocalTodos(todo) {
     } else {
         todos = JSON.parse(localStorage.getItem('todos'));
     }
+    //Usuwanue elementów metodą splice
     const todoIndex = todo.children[0].innerText;
     todos.splice(todos.indexOf(todoIndex), 1);
     localStorage.setItem('todos', JSON.stringify(todos));
