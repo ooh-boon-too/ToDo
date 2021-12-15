@@ -1,1 +1,2 @@
 # ToDo
+lokalna lista Todo.
