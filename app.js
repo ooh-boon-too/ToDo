@@ -131,6 +131,7 @@ function getTodos() {
 function removeLocalTodos(todo) {
     //Sprawdza pamięć lokalną czy istnieją już takie elementy
     let todos;
+    let todos_list;
     if (localStorage.getItem('todos') === null) {
         todos = [];
     } else {
@@ -140,4 +141,9 @@ function removeLocalTodos(todo) {
     const todoIndex = todo.children[0].innerText;
     todos.splice(todos.indexOf(todoIndex), 1);
     localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+//Dodawanie elementów do sidenav
+function addList(event) {
+    
 }
