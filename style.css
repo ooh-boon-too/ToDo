@@ -1,3 +1,4 @@
+/*strona głowna*/
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
 }
 
 body {
-    background-color: rgb(71, 71, 71);
+    background-color: white;
     color: black;
     min-height: 100vh;
 }
@@ -14,8 +15,8 @@ body {
 header {
     margin-top: 2.5rem;
     font-size: 1.5rem;
-    color: lightgreen;
-    text-shadow: 3px 1px black;
+    color: black;
+    text-shadow: 1px 0 red;
 }
 
 header,
@@ -166,14 +167,14 @@ select {
     width: 15rem;
     cursor: pointer;
     padding: 1rem;
-    color: lightgrey;
+    color: white;
     background-color: black;
 }
 
 .select::after {
     content: "\25BC";
     background-color: black;
-    color: lightgrey;
+    color: white;
     position: absolute;
     top: -5px;
     right: 0;
@@ -194,7 +195,8 @@ option {
 }
 
 footer {
-    color: lightgreen;
+    color: black;
+    font-weight: bold;
     margin: 0;
     padding: 5vh;
     text-align: center;
