@@ -3,12 +3,14 @@ const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo');
+const deletelist = document.querySelector('.del-all');
 
 //Eventy
 document.addEventListener("DOMContentLoaded", getTodos);
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
 filterOption.addEventListener("click", filterTodo);
+deletelist.addEventListener("click", delList);
 
 //Funkcje
 function addTodo(event) {
@@ -45,7 +47,7 @@ function deleteCheck(e) {
     if (item.classList[0] === "trash-btn") {
         const todo = item.parentElement;
         //Animacja
-        todo.classList.add("swipe");
+        todo.classList.add("anim");
         removeLocalTodos(todo);
         todo.addEventListener("transitionend", function () {
             todo.remove();
@@ -131,7 +133,6 @@ function getTodos() {
 function removeLocalTodos(todo) {
     //Sprawdza pamięć lokalną czy istnieją już takie elementy
     let todos;
-    let todos_list;
     if (localStorage.getItem('todos') === null) {
         todos = [];
     } else {
@@ -141,4 +142,14 @@ function removeLocalTodos(todo) {
     const todoIndex = todo.children[0].innerText;
     todos.splice(todos.indexOf(todoIndex), 1);
     localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+
+function delList() {
+    //Usuwa wszystkie elementy z pamięci lokalnej
+    var x = confirm("Czy chesz kontynuować?\nTa opcja wyczyści pamięc lokalną, w tym wszystkie dodane elementy.")
+    if (x == true) {
+        localStorage.clear();
+        window.location.reload();
+    }
 }
